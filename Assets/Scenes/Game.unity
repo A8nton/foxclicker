@@ -1026,6 +1026,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1256582657}
   - component: {fileID: 1256582658}
+  - component: {fileID: 1256582656}
   m_Layer: 0
   m_Name: DetectClicks
   m_TagString: Untagged
@@ -1033,6 +1034,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &1256582656
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256582655}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.720688, y: 6.474264, z: 0.8390641}
+  m_Center: {x: -0.12088966, y: 2.2359352, z: 0.34855533}
 --- !u!4 &1256582657
 Transform:
   m_ObjectHideFlags: 0

@@ -8,10 +8,13 @@ public class Manager : MonoBehaviour {
     [SerializeField]
     private Text _score;
 
-    public int coinUpdate = 1;
-    public int coins;
+    private int coinUpdate;
+    private int coins;
+
+    private int _random;
 
     public void Start() {
+        coinUpdate = PlayerPrefs.GetInt("coinUpdate");
         int savedCoins = PlayerPrefs.GetInt("coins");
         coins = savedCoins;
         _score.text = "FOXCOINS: " + savedCoins.ToString();
@@ -24,12 +27,19 @@ public class Manager : MonoBehaviour {
         }
     }
 
-    void Update() {
-        if(Input.GetMouseButtonDown(0)) {
-            coins += coinUpdate;
-            PlayerPrefs.SetInt("coins", coins);
-            PlayerPrefs.SetInt("coinUpdate", coinUpdate);
-            _score.text = "FOXCOINS: " + coins;
+    void OnMouseDown() {
+        coins += coinUpdate;
+    }
+
+    public void Update() {
+        _score.text = "FOXCOINS: " + coins;
+        PlayerPrefs.SetInt("coins", coins);
+        PlayerPrefs.SetInt("coinUpdate", coinUpdate);
+
+        _random = Random.Range(1, 100);
+
+        if (_random == 50) {
+
         }
     }
 }
