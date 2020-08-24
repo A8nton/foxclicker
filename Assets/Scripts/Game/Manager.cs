@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,7 +10,7 @@ public class Manager : MonoBehaviour {
     //DetectClicks
 
     [SerializeField]
-    private Text _score;
+    private TextMeshProUGUI _score;
     [SerializeField]
     private GameObject _secretBird;
     [SerializeField]
@@ -18,16 +19,20 @@ public class Manager : MonoBehaviour {
     private GameObject _boostText;
     [SerializeField]
     private GameObject _endButton;
+    [SerializeField]
+    private long coins;
 
-    public int coinUpdate;
-    public int coins;
-    public int _random;
-
+    private long _coinUpdate;
     private bool _canBird = true;
 
+    public int _random;
+
     public void Start() {
-        coinUpdate = PlayerPrefs.GetInt("coinUpdate");
-        int savedCoins = PlayerPrefs.GetInt("coins");
+        _coinUpdate = System.Convert.ToInt64(PlayerPrefs.GetString("coinUpdate"));
+        if (_coinUpdate == 0)
+            _coinUpdate = 1;
+
+        long savedCoins = System.Convert.ToInt64(PlayerPrefs.GetString("coins"));
         coins = savedCoins;
         _score.text = "FOXCOINS: " + savedCoins.ToString();
     }
@@ -35,64 +40,64 @@ public class Manager : MonoBehaviour {
     public void PlusOneCoin() {
         if (coins >= 10) {
             coins -= 10;
-            coinUpdate++;
+            _coinUpdate++;
         }
     }
-    public void PlusTenCoin() {
+    public void PlusTenCoins() {
         if (coins >= 100) {
             coins -= 100;
-            coinUpdate = coinUpdate + 10;
+            _coinUpdate = _coinUpdate + 10;
         }
     }
-    public void PlusOneHundredCoin() {
+    public void PlusOneHundredCoins() {
         if (coins >= 1000) {
             coins -= 1000;
-            coinUpdate = coinUpdate + 100;
+            _coinUpdate = _coinUpdate + 100;
         }
     }
-    public void PlusThouthantCoin() {
+    public void PlusThousandCoins() {
         if (coins >= 10000) {
             coins -= 10000;
-            coinUpdate = coinUpdate + 1000;
+            _coinUpdate = _coinUpdate + 1000;
         }
     }
-    public void PlusTenThouthentCoin() {
+    public void PlusTenThousandCoins() {
         if (coins >= 100000) {
             coins -= 100000;
-            coinUpdate = coinUpdate + 10000;
+            _coinUpdate = _coinUpdate + 10000;
         }
     }
-    public void PlusHundredThouthentCoin() {
+    public void PlusHundredThousandCoins() {
         if (coins >= 1000000) {
             coins -= 1000000;
-            coinUpdate = coinUpdate + 100000;
+            _coinUpdate = _coinUpdate + 100000;
         }
     }
-    public void PlusMillionCoin() {
+    public void PlusMillionCoins() {
         if (coins >= 1000000000) {
             coins -= 1000000000;
-            coinUpdate = coinUpdate + 100000000;
+            _coinUpdate = _coinUpdate + 1000000;
         }
     }
 
     void OnMouseDown() {
-        coins += coinUpdate;
+        coins += _coinUpdate;
     }
 
     public void Update() {
         _score.text = "FOXCOINS: " + coins;
-        PlayerPrefs.SetInt("coins", coins);
-        PlayerPrefs.SetInt("coinUpdate", coinUpdate);
+        PlayerPrefs.SetString("coins", coins.ToString());
+        PlayerPrefs.SetString("coinUpdate", _coinUpdate.ToString());
 
         if (_canBird == true) {
-            _random = Random.Range(1, 100000);//1 from 100,000
+            _random = Random.Range(1, 100000); //1 from 100,000
 
             if (_random == 50) {
                 StartCoroutine(Bird());
                 _secretBird.SetActive(true);
             }
         }
-        if (coinUpdate >= 1000000) { //If coinUpdate equals one Million
+        if (_coinUpdate >= 1000000000) { // if coinUpdate greater or equals one Billion
             _endButton.SetActive(true);
         }
     }
@@ -103,6 +108,6 @@ public class Manager : MonoBehaviour {
         _boostText.SetActive(true);
         _dLore.SetActive(true);
         _secretBird.SetActive(false);
-        coinUpdate = coinUpdate + 1000;
+        _coinUpdate += 1000;
     }
 }

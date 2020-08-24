@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Music: \uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\u2229nton Sh\u2229nkovskiy"
+  m_Text: 'Music: Anton Shankovskiy'
 --- !u!222 &234135448
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -412,7 +412,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Idea: \uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\u2229nton Sh\u2229nkovskiy"
+  m_Text: "Idea: \uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EFAnton Shankovskiy"
 --- !u!222 &673108629
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -603,7 +603,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Code: \uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\u2229nton Sh\u2229nkovskiy"
+  m_Text: "Code: \uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EFAnton Shankovskiy"
 --- !u!222 &860609705
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -682,8 +682,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "EasterEggs: \uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\u2229nton
-    Sh\u2229nkovskiy"
+  m_Text: "EasterEggs: \uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EFAnton Shankovskiy"
 --- !u!222 &934566860
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1129,7 +1128,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Models: \uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\u2229nton Sh\u2229nkovskiy"
+  m_Text: "Models: \uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EF\uA4EFAnton Shankovskiy"
 --- !u!222 &1866203757
 CanvasRenderer:
   m_ObjectHideFlags: 0
